@@ -17,6 +17,6 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
     - name: Automated Testing
+      shell: bash
       run: |
-          ./gradlew clean build
-          ./gradlew test
+          ant -noinput -buildfile build.xml testall
