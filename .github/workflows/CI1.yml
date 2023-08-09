@@ -1,4 +1,4 @@
-name: SCC CI 2
+name: SCC CI 
 
 on:
   push:
