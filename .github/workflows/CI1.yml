@@ -20,6 +20,11 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
+    - name: Install Ant
+      run: sudo apt-get install ant  # Install Ant on the runner
+
+    - name: Build with Ant
+      run: ant  
   test: 
      runs-on: ubuntu-latest
      steps:
