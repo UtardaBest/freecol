@@ -20,7 +20,11 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
-    - name: Automated Testing
-      shell: bash
-      run: |
+  test: 
+     runs-on: ubuntu-latest
+     steps:
+     - uses: actions/checkout@v3
+     - name: Automated Testing
+       shell: bash
+       run: |
           ant -noinput -buildfile build.xml testall
