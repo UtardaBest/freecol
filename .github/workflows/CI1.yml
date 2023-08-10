@@ -1,4 +1,4 @@
-name: SCC CI 
+name: SCC CI test
 
 on:
   push:
