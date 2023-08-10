@@ -27,7 +27,7 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: Package
-        path: build/jar 
+        path: "**/freecol/FreeCol.jar"
       
     - name: Set Up Node.js
       uses: actions/setup-node@v2
