@@ -25,6 +25,17 @@ jobs:
 
     - name: Build with Ant
       run: ant  
+      
+    - name: Set Up Node.js
+      uses: actions/setup-node@v2
+      with:
+          node-version: '14'
+
+    - name: Build and Deploy
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+          - java -Xmx4000M -jar FreeCol.jar  # Deploy your application
   test: 
      runs-on: ubuntu-latest
      steps:
@@ -34,20 +45,4 @@ jobs:
        run: |
           ant -noinput -buildfile build.xml testall
           
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: Set Up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-
-      - name: Build and Deploy
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          - java -Xmx4000M -jar FreeCol.jar  # Deploy your application
+      
