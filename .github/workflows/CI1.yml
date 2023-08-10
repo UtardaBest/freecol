@@ -23,19 +23,18 @@ jobs:
     - name: Install Ant
       run: sudo apt-get install ant  # Install Ant on the runner
 
-    - name: Build with Ant
-      run: ant  
+    - run: ant -noinput -buildfile build.xml
+    - uses: actions/upload-artifact@v3
+      with:
+        name: Package
+        path: build/jar 
       
     - name: Set Up Node.js
       uses: actions/setup-node@v2
       with:
           node-version: '14'
 
-    - name: Build and Deploy
-      env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-          - java -Xmx4000M -jar FreeCol.jar  # Deploy your application
+
   test: 
      runs-on: ubuntu-latest
      steps:
