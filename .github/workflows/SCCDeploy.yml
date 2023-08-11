@@ -2,6 +2,8 @@ name: Test and publish to DockerHub
 on:
   push:
     branches: [ main ]
+    
+permissions: read-all|write-all
 jobs:
   test: 
      runs-on: ubuntu-latest
