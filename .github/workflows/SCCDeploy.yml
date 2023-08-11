@@ -4,7 +4,7 @@ on:
     branches: [ main ]
     
 permissions: 
-  read-all|write-all
+  actions: read|write
 jobs:
   test: 
      runs-on: ubuntu-latest
