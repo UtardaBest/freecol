@@ -26,4 +26,5 @@ deploy:
   token: $TRAVIS_TOKEN
   file_glob: true
   file: "dist/releases/*"
- 
+  on:
+    branch: main
