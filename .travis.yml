@@ -28,3 +28,4 @@ deploy:
   file: "dist/releases/*"
   on:
     branch: main
+    
